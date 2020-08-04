@@ -1,5 +1,5 @@
-
-A Financial Services which provides financial data visualization and analysis-Sandeepan Datta
+Avcon International
+A Financial Services firm which provides financial data visualization and analysis
 
 
 Table of Contents:
