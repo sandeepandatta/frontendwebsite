@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Chart</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+    </script>
+    
+    <link rel="stylesheet" href="stylesheet/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" integrity="sha512-s+xg36jbIujB2S2VKfpGmlC3T5V2TF3lY48DX7u2r9XzGzgPsa6wTpOQA7J9iffvdeBN0q9tKzRxVxw1JviZPg==" crossorigin="anonymous"></script>
+    <script src="javascript/chartsfile.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="index.html"> aVcon iNternational</a>
+        <button class="navbar-toggler" data-target="#my-nav" data-toggle="collapse" aria-controls="my-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="my-nav" class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+                <!--<li class="nav-item active">
+                    <a class="nav-link" href="about.html" >About Us <span class="sr-only">(current)</span></a>
+                </li>-->
+                <li class="nav-item">
+                    <a class="nav-link" href="product.html" tabindex="-1" aria-disabled="true">Financial Chart</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html" tabindex="-1" aria-disabled="true">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+</header>
+<main>
+    <br>
+  
+    <div id="chartsparam">
+    <p> <strong>The following chart displays the 2019 Sales($bn) data for top technology companies</strong> </p>
+    <label for ="chartType"><strong>Please select the type of chart to display the data:</strong></label> 
+    <select name="chartType" id="chartType" onchange="updateChartType()">
+        <option value="bar">Bar</option>
+        <option value="line">Line</option>
+        <option value="pie">Pie</option>
+        <option value="radar">Radar</option>
+        <option value="polarArea">Polar Area</option>
+        
+    </select> 
+    <br>
+    <br>      
+    </div>     
+    <br/> 
+    <canvas id="my_Chart" class="col-md-7 offset-md-2" ></canvas>
+   <script>
+         var myData = {
+    labels: ["Facebook","Apple","Amazon","NetFlix", "Google","Microsoft","Nvidia","Intel","Oracle"],
+    datasets: [{
+      label: "Sales($bn) in 2019",
+      fill: false,
+      backgroundColor: ['#ff0000', '#ff4000', '#ff8000', '#ffbf00', '#ffbf00', '#ffff00', '#bfff00', '#80ff00', '#40ff00', '#00ff00'],
+      borderColor: 'black',
+      data: [70.69, 260.17, 280.52, 20.15, 161.85, 125.84, 11.71, 71.96, 39.50],
+    }]
+  };
+  
+    // Code to drow Chart
+        // Default chart defined with type: 'bar'
+        var ctx = document.getElementById('my_Chart').getContext('2d');
+			var myChart = new Chart(ctx, {
+				type: 'bar',    	// Define chart type
+				data: myData    	// Chart data
+			});
+			
+			// Function runs on chart type select update
+            
+			function updateChartType() {
+        // Destroy the previous chart
+				myChart.destroy();
+                // Draw a new chart on the basic of dropdown
+				myChart = new Chart(ctx, {
+					type: document.getElementById("chartType").value,  // Select chart type from dropdown
+					data: myData
+				});
+			};
+   </script>     
+  
+  
+</main>
+<footer>
+    <a href="http://www.facebook.com" class="fa fa-facebook" target="_blank"></a>
+    <a href="http://www.twitter.com" class="fa fa-twitter" target="_blank"></a>
+    <a href="http://www.linkedin.com" class="fa fa-linkedin" target="_blank"></a>
+    <a href="http://www.instagram.com" class="fa fa-instagram" target="_blank" ></a>
+    <span id="footertxt">Copyright © 1997 - 2020 aVcon iNternational and/or its affiliates. All rights reserved.</span>
+ </footer>
+
+
+
+</body>
+
+   
+   
+
+</html>

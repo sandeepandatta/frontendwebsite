@@ -1,0 +1,119 @@
+main {
+    margin-top:57px;
+}
+
+img{
+    width:400px;
+    height:400px;
+   
+}
+
+body
+{
+    background-color: whitesmoke;
+}
+
+
+#InputEmail1, #InputPassword1, .btn-success
+{
+   margin: auto;
+  display: block;
+}
+.form-group, .btn-success{
+   display: block;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.form-control{
+    width:30%;
+}
+#myChart{
+    height: 50px;
+    width:50px;
+}
+
+.carousel-caption {
+    color:white;
+    background-color: lightslategrey;
+}
+
+
+
+#mapid { height: 400px;
+width:100%;
+margin:auto; 
+
+}
+
+label.error {
+    color:lightsalmon;
+    padding-left: 0.25em;
+    margin-left: 0.25em;
+    
+}
+
+#myForm {
+    width: 40%;
+    margin:auto;
+}
+
+form:valid input[type="submit"] {
+    background-color: #cfc;
+    color: #060;
+  }
+  
+form:invalid input[type="submit"] {
+    background-color: #fcc;
+    color: #600;
+  }
+  
+#chartsparam {
+    margin-left: 5em;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+footer {
+    margin-top: auto;
+    margin-left: 0.5em;
+    margin-bottom: 0.25em;
+}
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 60px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+  }
+  
+  .fa:hover {
+      opacity: 0.7;
+  }
+  
+  .fa-facebook {
+    background: #3B5998;
+    color: white;
+  }
+  
+  .fa-twitter {
+    background: #55ACEE;
+    color: white;
+  }
+
+.fa-linkedin {
+        background: #007bb5;
+        color: white;
+      }
+
+ .fa-instagram {
+        background: rgba(0, 0, 0, 0.699);
+        color: white;
+      }
+      
+
+#footertxt {
+    font-size: x-small;
+}
+
+
